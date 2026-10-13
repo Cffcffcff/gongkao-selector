@@ -42,11 +42,13 @@ jobs:
               z.extractall('_site')
           root = pathlib.Path('_site')
           assert (root / 'index.html').is_file()
-          if m.get('downloadYears') == ['2027']:
+          if m.get('downloadYears') == ['2027'] and not m.get('optionalDownloadYears'):
               assert not (root / 'jobs-2026.json').exists()
               assert json.loads((root / 'catalogue.json').read_text())['downloadYears'] == ['2027']
           elif (root / 'jobs-2026.json').exists():
               assert json.loads((root / 'jobs-2026.json').read_text())['recordCount'] == 29647
+              assert m.get('optionalDownloadYears') == ['2026']
+              assert json.loads((root / 'catalogue.json').read_text())['downloadYears'] == ['2027']
           assert json.loads((root / 'jobs-2027.json').read_text())['recordCount'] == 19426
           if pathlib.Path('mobile-access.json').is_file():
               (root / 'mobile-access.json').write_bytes(pathlib.Path('mobile-access.json').read_bytes())
