@@ -2,7 +2,7 @@ name: 发布公考选岗手机版
 on:
   push:
     branches: [main]
-    paths: ['site.zip.part*', 'release-manifest.json', '.github/workflows/deploy.yml']
+    paths: ['site.zip.part*', 'release-manifest.json', 'mobile-access.json', '.github/workflows/deploy.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -44,6 +44,8 @@ jobs:
           assert (root / 'index.html').is_file()
           assert json.loads((root / 'jobs-2026.json').read_text())['recordCount'] == 29647
           assert json.loads((root / 'jobs-2027.json').read_text())['recordCount'] == 19426
+          if pathlib.Path('mobile-access.json').is_file():
+              (root / 'mobile-access.json').write_bytes(pathlib.Path('mobile-access.json').read_bytes())
           (root / '.nojekyll').touch()
           PY
       - uses: actions/configure-pages@v5
