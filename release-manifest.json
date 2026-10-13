@@ -1,0 +1,22 @@
+{
+  "format": "gangwei-pages-release-v1",
+  "sha256": "719a39fa2a085022c31a0ba3552b739209b8cc1e9ab9d809c54b9f6e4ee088b2",
+  "bytes": 26811582,
+  "parts": [
+    {
+      "file": "site.zip.part01",
+      "bytes": 10485760,
+      "sha256": "5819b319bdef0bc5c50cc18e5ef3c38e7bcdeecaa3c7b4dd41f9d8bb4ab91799"
+    },
+    {
+      "file": "site.zip.part02",
+      "bytes": 10485760,
+      "sha256": "62550ad5580deffba86fd279bc7b3eaac20139605951f7712402f3e88b96e173"
+    },
+    {
+      "file": "site.zip.part03",
+      "bytes": 5840062,
+      "sha256": "a162474f15d6231c4431053cfe6f48f0cc8eea56ed4440d8920325996c251217"
+    }
+  ]
+}
