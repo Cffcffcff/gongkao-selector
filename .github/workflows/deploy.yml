@@ -42,7 +42,11 @@ jobs:
               z.extractall('_site')
           root = pathlib.Path('_site')
           assert (root / 'index.html').is_file()
-          assert json.loads((root / 'jobs-2026.json').read_text())['recordCount'] == 29647
+          if m.get('downloadYears') == ['2027']:
+              assert not (root / 'jobs-2026.json').exists()
+              assert json.loads((root / 'catalogue.json').read_text())['downloadYears'] == ['2027']
+          elif (root / 'jobs-2026.json').exists():
+              assert json.loads((root / 'jobs-2026.json').read_text())['recordCount'] == 29647
           assert json.loads((root / 'jobs-2027.json').read_text())['recordCount'] == 19426
           if pathlib.Path('mobile-access.json').is_file():
               (root / 'mobile-access.json').write_bytes(pathlib.Path('mobile-access.json').read_bytes())
@@ -66,4 +70,3 @@ jobs:
       - name: 发布已校验静态网站
         id: deployment
         uses: actions/deploy-pages@v4
-
