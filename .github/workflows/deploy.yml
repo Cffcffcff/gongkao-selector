@@ -1,0 +1,67 @@
+name: 发布公考选岗手机版
+on:
+  push:
+    branches: [main]
+    paths: ['site.zip.part*', 'release-manifest.json', '.github/workflows/deploy.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: 校验并解包已验收的静态发布包
+        run: |
+          python3 - <<'PY'
+          import hashlib, io, json, pathlib, zipfile
+          m = json.loads(pathlib.Path('release-manifest.json').read_text())
+          assert m['format'] == 'gangwei-pages-release-v1'
+          chunks = []
+          for i, part in enumerate(m['parts'], 1):
+              assert part['file'] == f'site.zip.part{i:02d}'
+              data = pathlib.Path(part['file']).read_bytes()
+              assert len(data) == part['bytes']
+              assert hashlib.sha256(data).hexdigest() == part['sha256']
+              chunks.append(data)
+          data = b''.join(chunks)
+          assert len(data) == m['bytes']
+          assert hashlib.sha256(data).hexdigest() == m['sha256']
+          with zipfile.ZipFile(io.BytesIO(data)) as z:
+              assert z.testzip() is None
+              for entry in z.infolist():
+                  p = pathlib.PurePosixPath(entry.filename)
+                  assert not p.is_absolute() and '..' not in p.parts
+                  assert entry.file_size <= 24 * 1024 * 1024
+              z.extractall('_site')
+          root = pathlib.Path('_site')
+          assert (root / 'index.html').is_file()
+          assert json.loads((root / 'jobs-2026.json').read_text())['recordCount'] == 29647
+          assert json.loads((root / 'jobs-2027.json').read_text())['recordCount'] == 19426
+          (root / '.nojekyll').touch()
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 发布已校验静态网站
+        id: deployment
+        uses: actions/deploy-pages@v4
+
