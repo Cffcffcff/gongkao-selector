@@ -1,12 +1,12 @@
 {
   "format": "gangwei-pages-release-v1",
-  "sha256": "f0cfdbbdb12065bc36d14266ee5fab9134f99230dd1612e0617bedb7c1f24183",
-  "bytes": 10162131,
+  "sha256": "bd903355fad0891bfbd86973c69f945f2ea53bff9d71bf08de10cdf086559080",
+  "bytes": 10162263,
   "parts": [
     {
       "file": "site.zip.part01",
-      "bytes": 10162131,
-      "sha256": "f0cfdbbdb12065bc36d14266ee5fab9134f99230dd1612e0617bedb7c1f24183"
+      "bytes": 10162263,
+      "sha256": "bd903355fad0891bfbd86973c69f945f2ea53bff9d71bf08de10cdf086559080"
     }
   ],
   "downloadYears": [
