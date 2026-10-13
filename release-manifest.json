@@ -1,22 +1,15 @@
 {
   "format": "gangwei-pages-release-v1",
-  "sha256": "753c5a34fb9bc78e4d8d2d904b6536ca3464f8f7bca37eff597141ed2298335c",
-  "bytes": 25909758,
+  "sha256": "f0cfdbbdb12065bc36d14266ee5fab9134f99230dd1612e0617bedb7c1f24183",
+  "bytes": 10162131,
   "parts": [
     {
       "file": "site.zip.part01",
-      "bytes": 10485760,
-      "sha256": "f78b935fe5ca990853d86a04458eb822453e827cf6a9714e760a9caa700cff95"
-    },
-    {
-      "file": "site.zip.part02",
-      "bytes": 10485760,
-      "sha256": "048c00f83fd646a8a169abd01234ca5dab8a531a599c3be827942cf6d508d049"
-    },
-    {
-      "file": "site.zip.part03",
-      "bytes": 4938238,
-      "sha256": "5bf469db0b810308b3ca37f218fcfa8a725501dbdcd78b3222f772eeb102ecd5"
+      "bytes": 10162131,
+      "sha256": "f0cfdbbdb12065bc36d14266ee5fab9134f99230dd1612e0617bedb7c1f24183"
     }
+  ],
+  "downloadYears": [
+    "2027"
   ]
 }
