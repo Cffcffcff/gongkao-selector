@@ -1,27 +1,27 @@
 {
   "format": "gangwei-pages-release-v1",
-  "sha256": "040fc1574e0abeba51470f75fcd8cba4e4392fe28d4d1f26415698d70d05fc7c",
-  "bytes": 35016051,
+  "sha256": "ffb8bb7492ecdde7c850abe9267d095cfd8d0700b7e304984bd1457a3ee91ecc",
+  "bytes": 35027538,
   "parts": [
     {
       "file": "site.zip.part01",
       "bytes": 10485760,
-      "sha256": "44d688b0d47d08f22948814b59aec5819aa806d26de3b119c6eb603103b16304"
+      "sha256": "b785be8220b88284e5f6bd59904c70b438518cbb5c472ef158edb2e97654d0b7"
     },
     {
       "file": "site.zip.part02",
       "bytes": 10485760,
-      "sha256": "1fbee031880408289c89feae8683e4afe33672a67c2b300476e392bf06943d30"
+      "sha256": "ece199d51dd10480e34c7381a322913829f177151ab0552b76ccd2f10d59674b"
     },
     {
       "file": "site.zip.part03",
       "bytes": 10485760,
-      "sha256": "75b6df176ab6254cc435d133e8a27e534b4a6146cbf64b1ad733b61314abac21"
+      "sha256": "e8d24d776dba1e3ce546e38a561b105992275c7207f49e87d90b2e50685300a0"
     },
     {
       "file": "site.zip.part04",
-      "bytes": 3558771,
-      "sha256": "d918e5b2e552858774cbaf11ab763cdbc1863ad61b2ff0009cc8a650173e888c"
+      "bytes": 3570258,
+      "sha256": "c2dc64281d97f672dcc095d22b9f86c01a9eac367f5556a5c63334958cd0df1a"
     }
   ],
   "availableYears": [
