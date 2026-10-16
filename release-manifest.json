@@ -1,27 +1,27 @@
 {
   "format": "gangwei-pages-release-v1",
-  "sha256": "d1c8cf0cbb40b0b3012b9839eaf3c51b1edf268a98e52942eadd48d8ed4ca380",
-  "bytes": 35164106,
+  "sha256": "ff327c47c376d886c76902fd3b5e2ddfaf09b1967be668c54e16d0352e5998c1",
+  "bytes": 35164427,
   "parts": [
     {
       "file": "site.zip.part01",
       "bytes": 10485760,
-      "sha256": "7742961d3f3453e0baa463ffdcaf8161992a9d75d2074725b5e0b673b93937a9"
+      "sha256": "baccace1013520126bd755e0833ee7dd0950e17bec2c80e643b2c02f4fd665b9"
     },
     {
       "file": "site.zip.part02",
       "bytes": 10485760,
-      "sha256": "89188925ab847b5eca24e3a226d0de54806a035c1decc633a0e36800a9f3de4c"
+      "sha256": "72043205616db1e420b2d8f8be5cf40f7007866438b4f36c11100553efbc4687"
     },
     {
       "file": "site.zip.part03",
       "bytes": 10485760,
-      "sha256": "5fb1c3c404a0341e27837047eb8a97bdcd1025a0b307f4a794b53babc5a8b952"
+      "sha256": "51d63e33a5e3b9b8887446231907da6e3619c21b5f98926eb6b2fb4d0379d374"
     },
     {
       "file": "site.zip.part04",
-      "bytes": 3706826,
-      "sha256": "8c6445cbb8321314faa8f9d1cfa48759b2b1b492ed032c0def3129be2ee8a9a0"
+      "bytes": 3707147,
+      "sha256": "f7cf54bdae23b28da75eaed4abd1b23c35287299677f48793ccdf0199f800940"
     }
   ],
   "availableYears": [
